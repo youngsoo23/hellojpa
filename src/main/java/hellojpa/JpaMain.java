@@ -1,9 +1,6 @@
 package hellojpa;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.*;
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,13 +15,18 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Movie movie = new Movie();
-            movie.setActor("aaa");
-            movie.setDirector("bbb");
-            movie.setName("바람과 함께 사라질까");
-            movie.setPrice(100000);
 
-            em.persist(movie);
+
+            Member member = new Member();
+
+
+//            Movie movie = new Movie();
+//            movie.setActor("aaa");
+//            movie.setDirector("bbb");
+//            movie.setName("바람과 함께 사라질까");
+//            movie.setPrice(100000);
+//
+//            em.persist(movie);
 
 //            Team team = new Team();
 //            team.setName("TeamA");
