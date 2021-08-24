@@ -18,16 +18,23 @@ public class JpaMain {
         tx.begin();
 
         try {
+            Movie movie = new Movie();
+            movie.setActor("aaa");
+            movie.setDirector("bbb");
+            movie.setName("바람과 함께 사라질까");
+            movie.setPrice(100000);
 
-            Team team = new Team();
-            team.setName("TeamA");
-//            team.getMembers().add(member);
-            em.persist(team);
+            em.persist(movie);
 
-            Member member = new Member();
-            member.setUsername("member1");
-            member.changeTeam(team);
-            em.persist(member);
+//            Team team = new Team();
+//            team.setName("TeamA");
+////            team.getMembers().add(member);
+//            em.persist(team);
+//
+//            Member member = new Member();
+//            member.setUsername("member1");
+//            member.changeTeam(team);
+//            em.persist(member);
 
 //            Team team = new Team();
 //            team.setName("TeamA");
@@ -36,8 +43,8 @@ public class JpaMain {
 
 
 
-            em.flush();
-            em.clear();
+//            em.flush();
+//            em.clear();
 
 //            Member findmember = em.find(Member.class, member.getId());
 //            List<Member> members = findmember.getTeam().getMembers();

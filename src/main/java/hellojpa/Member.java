@@ -44,7 +44,7 @@ public class Member {
     @JoinTable(name = "member_product")
     private List<Product> products = new ArrayList<>();
 
-    @OneToMany(mappedBy = "memeber")
+    @OneToMany(mappedBy = "member")
     private List<MemberProduct> memberProduct;
 }
 
