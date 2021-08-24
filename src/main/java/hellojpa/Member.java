@@ -3,6 +3,7 @@ package hellojpa;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Member {
+public class Member extends BaseEntity{
     @Id
     @GeneratedValue
     @Column(name = "member_id")
@@ -20,6 +21,7 @@ public class Member {
 
     @Column(name = "name")
     private String username;
+
 
 //    @Column(name = "team_id")
 //    private Long teamId;
