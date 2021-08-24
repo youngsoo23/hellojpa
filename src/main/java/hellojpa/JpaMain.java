@@ -17,9 +17,28 @@ public class JpaMain {
         try {
 
 
-            Member member = new Member();
 
+//            Team team = new Team();
+//            team.setName("team1");
+//            em.persist(team);
+//
+//            Team team2 = new Team();
+//            team2.setName("team2");
+//            em.persist(team2);
+//
+//            Member member = new Member();
+//            member.setUsername("Member1");
+//            member.setTeam(team);
+//            em.persist(member);
+//
+//            Member member2 = new Member();
+//            member2.setUsername("Member2");
+//            member2.setTeam(team2);
 
+            em.flush();
+            em.clear();
+
+//           List<Member> members = em.createQuery("select m from Member m", Member.class).getResultList();
 //            Movie movie = new Movie();
 //            movie.setActor("aaa");
 //            movie.setDirector("bbb");
