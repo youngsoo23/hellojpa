@@ -19,8 +19,14 @@ public class JpaMain {
             Member member = new Member();
             member.setUsername("hello");
             member.setHomeAddress(new Address("city", "street","zip"));
-            member.setWorkPeriod(new Period());
 
+            //값 컬렉션 예제
+            member.getFavoriteFoods().add("치킨");
+            member.getFavoriteFoods().add("족발");
+            member.getFavoriteFoods().add("피자");
+
+            member.getAddressHistory().add(new Address("city1","street1","zip1"));
+            member.getAddressHistory().add(new Address("city2","street2","zip2"));
             em.persist(member);
 
 

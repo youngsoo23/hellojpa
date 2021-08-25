@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -75,5 +76,14 @@ public class Member extends BaseEntity {
     private Address workAddress;
 
 
+    //값 타입 컬렉션
+    @ElementCollection
+    @CollectionTable(name = "favorite_food", joinColumns = @JoinColumn(name="member_id"))
+    @Column(name="food_name")
+    private Set<String> favoriteFoods;
+
+    @ElementCollection
+    @CollectionTable(name="address", joinColumns = @JoinColumn(name="member_id"))
+    private List<Address> addressHistory = new ArrayList<>();
 }
 
