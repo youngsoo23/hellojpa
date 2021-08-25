@@ -16,6 +16,12 @@ public class JpaMain {
 
         try {
 
+            Member member = new Member();
+            member.setUsername("hello");
+            member.setHomeAddress(new Address("city", "street","zip"));
+            member.setWorkPeriod(new Period());
+
+            em.persist(member);
 
 
 //            Team team = new Team();

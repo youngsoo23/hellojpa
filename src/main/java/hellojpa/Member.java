@@ -13,7 +13,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Member extends BaseEntity{
+public class Member extends BaseEntity {
     @Id
     @GeneratedValue
     @Column(name = "member_id")
@@ -38,7 +38,7 @@ public class Member extends BaseEntity{
 
     //OneToOne 예제
     @OneToOne
-    @JoinColumn(name ="locker_id")
+    @JoinColumn(name = "locker_id")
     private Locker locker;
 
     //ManyToMany 예제
@@ -48,5 +48,32 @@ public class Member extends BaseEntity{
 
     @OneToMany(mappedBy = "member")
     private List<MemberProduct> memberProduct;
+
+    //Period
+//    private LocalDateTime startDate;
+//    private LocalDateTime endDate;
+
+    @Embedded
+    private Period workPeriod;
+
+    //Address
+//    private String city;
+//    private String street;
+//    private String zipcode;
+    @Embedded
+    private Address homeAddress;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "city",
+                    column = @Column(name = "WORK_CITY")),
+            @AttributeOverride(name = "street",
+                    column = @Column(name = "WORK_STREET")),
+            @AttributeOverride(name = "zipcode",
+                    column = @Column(name = "WORK_ZIPCODE"))
+    })
+    private Address workAddress;
+
+
 }
 
